@@ -546,6 +546,16 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+.project-image {
+    width: 100%;
+    height: auto;
+}
+
+.project-card.featured {
+    border: 2px solid var(--accent-color);
+    transform: scale(1.02);
+}
+
 .project-header {
     background: linear-gradient(135deg, var(--primary-green), var(--light-green));
     color: white;
