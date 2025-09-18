@@ -780,3 +780,15 @@ body {
 .project-image-clickable:hover {
     opacity: 0.8;
 }
+
+/* Video Section */
+.video-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.project-video {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
