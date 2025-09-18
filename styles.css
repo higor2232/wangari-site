@@ -688,6 +688,9 @@ body {
 }
 
 .quote-arrow i {
-    font-size: 14px; /* Ajusta o tamanho do ícone */
-    line-height: 1; /* Garante alinhamento vertical */
+    /* Anula estilos herdados de .hero-quote i */
+    position: static;
+    opacity: 1;
+    font-size: 14px;
+    line-height: 1;
 }
