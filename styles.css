@@ -347,6 +347,7 @@ body {
     border-radius: 15px;
     margin-bottom: 30px;
     box-shadow: var(--shadow);
+    overflow: auto; /* Clearfix para conter elementos flutuantes */
 }
 
 .content-section h2 {
