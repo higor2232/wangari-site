@@ -126,13 +126,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const quoteCarousel = document.getElementById('quote-carousel');
     if (quoteCarousel) {
         const quotes = quoteCarousel.querySelectorAll('.quote-item');
+        const prevButton = document.getElementById('quote-prev');
+        const nextButton = document.getElementById('quote-next');
         let currentQuoteIndex = 0;
+        let quoteInterval;
 
-        setInterval(() => {
-            quotes[currentQuoteIndex].classList.remove('active');
+        const showQuote = (index) => {
+            quotes.forEach(quote => quote.classList.remove('active'));
+            quotes[index].classList.add('active');
+        };
+
+        const nextQuote = () => {
             currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            quotes[currentQuoteIndex].classList.add('active');
-        }, 5000); // Troca a cada 5 segundos
+            showQuote(currentQuoteIndex);
+        };
+
+        const prevQuote = () => {
+            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+            showQuote(currentQuoteIndex);
+        };
+
+        const startCarousel = () => {
+            quoteInterval = setInterval(nextQuote, 5000); // Troca a cada 5 segundos
+        };
+
+        const resetCarousel = () => {
+            clearInterval(quoteInterval);
+            startCarousel();
+        };
+
+        nextButton.addEventListener('click', () => {
+            nextQuote();
+            resetCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            prevQuote();
+            resetCarousel();
+        });
+
+        startCarousel(); // Inicia o carrossel automaticamente
     }
 });
 
