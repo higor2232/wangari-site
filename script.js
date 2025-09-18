@@ -1,0 +1,143 @@
+// Toggle Sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('.main-content');
+    
+    sidebar.classList.toggle('collapsed');
+    
+    if (sidebar.classList.contains('collapsed')) {
+        mainContent.classList.add('expanded');
+    } else {
+        mainContent.classList.remove('expanded');
+    }
+}
+
+// Animated Counter for Statistics
+function animateCounter() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current).toLocaleString('pt-BR');
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.textContent = target.toLocaleString('pt-BR');
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Tree Benefits Calculator
+function calculateTreeBenefits() {
+    const input = document.getElementById('treeCount');
+    const results = document.getElementById('calculatorResults');
+    const count = parseInt(input.value);
+    
+    if (isNaN(count) || count <= 0) {
+        alert('Por favor, insira um número válido de árvores.');
+        return;
+    }
+    
+    // Cálculos baseados em dados médios
+    const co2PerTree = 22; // kg de CO2 por ano por árvore
+    const oxygenPerTree = 117; // kg de O2 por ano por árvore
+    const waterPerTree = 1000; // litros de água filtrada por ano
+    const temperatureReduction = count * 0.01; // redução aproximada em °C
+    
+    const totalCO2 = count * co2PerTree;
+    const totalOxygen = count * oxygenPerTree;
+    const totalWater = count * waterPerTree;
+    const peopleSupported = Math.floor(totalOxygen / 840); // 840kg O2 por pessoa/ano
+    
+    // Atualizar resultados
+    document.getElementById('co2Result').textContent = totalCO2.toLocaleString('pt-BR');
+    document.getElementById('oxygenResult').textContent = totalOxygen.toLocaleString('pt-BR');
+    document.getElementById('waterResult').textContent = totalWater.toLocaleString('pt-BR');
+    document.getElementById('peopleResult').textContent = peopleSupported.toLocaleString('pt-BR');
+    document.getElementById('tempResult').textContent = temperatureReduction.toFixed(1).replace('.', ',');
+    
+    results.classList.add('show');
+}
+
+// Initialize animations when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate counters when they come into view
+    const observerOptions = {
+        threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('stats')) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    }, observerOptions);
+    
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+    
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Active menu item based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Mobile sidebar handling
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const sidebar = document.getElementById('sidebar');
+    const swipeThreshold = 100;
+    
+    if (touchEndX - touchStartX > swipeThreshold) {
+        // Swipe right - open sidebar
+        sidebar.classList.remove('collapsed');
+        sidebar.classList.add('open');
+    } else if (touchStartX - touchEndX > swipeThreshold) {
+        // Swipe left - close sidebar
+        sidebar.classList.add('collapsed');
+        sidebar.classList.remove('open');
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wangari Maathai - Movimento Cinturão Verde</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <div id="sidebar" class="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span>Início</span></a></li>
+                <li><a href="historia.html"><i class="fas fa-history"></i> <span>História</span></a></li>
+                <li><a href="contribuicao.html"><i class="fas fa-tree"></i> <span>Sua Contribuição</span></a></li>
+                <li><a href="flig.html"><i class="fas fa-school"></i> <span>FLIG</span></a></li>
+                <li><a href="projetos-flig.html"><i class="fas fa-project-diagram"></i> <span>Projetos da FLIG</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Wangari_Maathai_in_2001.jpg" alt="Wangari Maathai">
+                </div>
+                <div class="hero-text">
+                    <h1>Wangari Maathai</h1>
+                    <p class="hero-subtitle">Fundadora do Movimento Cinturão Verde</p>
+                    <p class="hero-info">
+                        <strong>1940-2011</strong><br>
+                        Primeira mulher africana a receber o Prêmio Nobel da Paz<br>
+                        Ativista ambiental e política queniana
+                    </p>
+                    <blockquote class="hero-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Não podemos cansar ou desistir. Devemos persistir."</p>
+                        <cite>- Wangari Maathai</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estatísticas do Movimento -->
+        <section class="stats">
+            <h2>Impacto do Movimento Cinturão Verde no Quênia</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="stat-number" data-target="51000000">0</div>
+                    <div class="stat-label">Árvores Plantadas</div>
+                    <div class="stat-description">Desde 1977</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Viveiros Criados</div>
+                    <div class="stat-description">Em todo o Quênia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="30000">0</div>
+                    <div class="stat-label">Mulheres Capacitadas</div>
+                    <div class="stat-description">Em silvicultura e conservação</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="stat-number" data-target="3000">0</div>
+                    <div class="stat-label">Hectares Restaurados</div>
+                    <div class="stat-description">De áreas degradadas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regiões Transformadas -->
+        <section class="regions">
+            <h2>Regiões Transformadas pelo Movimento</h2>
+            <div class="regions-grid">
+                <div class="region-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Mount_Kenya.jpg/640px-Mount_Kenya.jpg" alt="Monte Quênia" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3><i class="fas fa-mountain"></i> Monte Quênia</h3>
+                    <p>Reflorestamento das encostas e proteção de nascentes</p>
+                </div>
+                <div class="region-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Mau_Forest.jpg/640px-Mau_Forest.jpg" alt="Floresta Mau" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3><i class="fas fa-water"></i> Floresta Mau</h3>
+                    <p>Maior complexo florestal do Quênia restaurado</p>
+                </div>
+                <div class="region-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Aberdare_National_Park_02.jpg/640px-Aberdare_National_Park_02.jpg" alt="Aberdare" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3><i class="fas fa-seedling"></i> Aberdare</h3>
+                    <p>Conservação de ecossistemas e biodiversidade</p>
+                </div>
+                <div class="region-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Great_Rift_Valley%2C_Kenya.jpg/640px-Great_Rift_Valley%2C_Kenya.jpg" alt="Vale do Rift" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3><i class="fas fa-globe-africa"></i> Vale do Rift</h3>
+                    <p>Combate à desertificação e erosão do solo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h2>Junte-se ao Movimento</h2>
+            <p>Cada árvore plantada é um passo em direção a um futuro mais verde</p>
+            <a href="contribuicao.html" class="cta-button">
+                <i class="fas fa-hand-holding-heart"></i> Saiba Como Contribuir
+            </a>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
