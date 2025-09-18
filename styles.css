@@ -664,7 +664,7 @@ body {
 .quote-nav {
     position: absolute;
     bottom: 10px;
-    right: 15px;
+    left: 15px; /* Movido para a esquerda */
     display: flex;
     gap: 10px;
 }
@@ -685,4 +685,9 @@ body {
 
 .quote-arrow:hover {
     background: rgba(255, 255, 255, 0.4);
+}
+
+.quote-arrow i {
+    font-size: 14px; /* Ajusta o tamanho do ícone */
+    line-height: 1; /* Garante alinhamento vertical */
 }
