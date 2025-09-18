@@ -638,6 +638,14 @@ body {
     .calculator-input input {
         width: 100%;
     }
+
+    .hero, .content-section, .page-header {
+        padding: 25px 15px; /* Reduz o padding em telas menores */
+    }
+
+    .main-content {
+        padding: 10px;
+    }
 }
 
 /* Quote Carousel Styles */
