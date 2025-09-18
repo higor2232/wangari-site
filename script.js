@@ -2,13 +2,22 @@
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.querySelector('.main-content');
-    
-    sidebar.classList.toggle('collapsed');
-    
-    if (sidebar.classList.contains('collapsed')) {
-        mainContent.classList.add('expanded');
-    } else {
-        mainContent.classList.remove('expanded');
+
+    // A classe 'open' será usada para controlar a visibilidade em todas as telas.
+    // O CSS já está preparado para lidar com isso de forma responsiva.
+    sidebar.classList.toggle('open');
+
+    // A lógica de 'collapsed' e 'expanded' pode ser simplificada ou removida
+    // se o CSS for ajustado para usar apenas 'open'.
+    // Por enquanto, vamos manter a compatibilidade com a lógica de desktop existente.
+    if (window.innerWidth > 768) {
+        if (sidebar.classList.contains('open')) {
+            sidebar.classList.remove('collapsed');
+            mainContent.classList.remove('expanded');
+        } else {
+            sidebar.classList.add('collapsed');
+            mainContent.classList.add('expanded');
+        }
     }
 }
 
