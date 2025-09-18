@@ -167,6 +167,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
         startCarousel(); // Inicia o carrossel automaticamente
     }
+
+    // Image Modal Logic
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        const modalImg = document.getElementById('modalImage');
+        const captionText = document.getElementById('modalCaption');
+        const clickableImages = document.querySelectorAll('.project-image-clickable');
+
+        clickableImages.forEach(img => {
+            img.onclick = function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+                
+                // Encontra os detalhes do card do projeto
+                const card = this.closest('.project-card');
+                const title = card.querySelector('h3').innerText;
+                const description = card.querySelector('p').innerText;
+                captionText.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+            }
+        });
+
+        const closeBtn = document.querySelector('.close-button');
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Fecha o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    }
 });
 
 // Mobile sidebar handling
