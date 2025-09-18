@@ -121,6 +121,19 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
+
+    // Quote Carousel
+    const quoteCarousel = document.getElementById('quote-carousel');
+    if (quoteCarousel) {
+        const quotes = quoteCarousel.querySelectorAll('.quote-item');
+        let currentQuoteIndex = 0;
+
+        setInterval(() => {
+            quotes[currentQuoteIndex].classList.remove('active');
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            quotes[currentQuoteIndex].classList.add('active');
+        }, 5000); // Troca a cada 5 segundos
+    }
 });
 
 // Mobile sidebar handling

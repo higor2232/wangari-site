@@ -169,6 +169,10 @@ body {
     font-style: italic;
     margin: 10px 0;
     padding-left: 30px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    width: calc(100% - 60px);
 }
 
 .hero-quote cite {
@@ -624,4 +628,35 @@ body {
     .calculator-input input {
         width: 100%;
     }
+}
+
+/* Quote Carousel Styles */
+.hero-quote {
+    min-height: 150px; /* Garante altura mínima para evitar "pulos" no layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quote-wrapper {
+    position: relative;
+    min-height: 80px; /* Ajuste conforme a maior frase */
+    display: flex;
+    align-items: center;
+}
+
+.quote-item {
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 10px 0;
+    padding-left: 30px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    width: calc(100% - 60px); /* Garante que o texto não sobreponha o ícone */
+}
+
+.quote-item.active {
+    opacity: 1;
+    position: relative; /* Traz a citação ativa para o fluxo normal */
 }
