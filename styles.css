@@ -164,17 +164,6 @@ body {
     left: 15px;
 }
 
-.hero-quote p {
-    font-size: 1.1em;
-    font-style: italic;
-    margin: 10px 0;
-    padding-left: 30px;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    width: calc(100% - 60px);
-}
-
 .hero-quote cite {
     display: block;
     text-align: right;
@@ -665,17 +654,16 @@ body {
 }
 
 .quote-item {
-    font-size: 1.1em;
-    font-style: italic;
-    margin: 10px 0;
-    padding-left: 30px;
     position: absolute;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
-    width: calc(100% - 60px); /* Garante que o texto não sobreponha o ícone */
+    width: calc(100% - 60px);
+    padding-left: 30px;
 }
 
 .quote-item p {
+    font-size: 1.1em;
+    font-style: italic;
     margin-bottom: 10px;
 }
 
@@ -688,7 +676,7 @@ body {
 
 .quote-item.active {
     opacity: 1;
-    position: relative; /* Traz a citação ativa para o fluxo normal */
+    position: relative;
 }
 
 .quote-nav {

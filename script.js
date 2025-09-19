@@ -132,9 +132,22 @@ document.addEventListener('DOMContentLoaded', function() {
         let quoteInterval;
 
         const showQuote = (index) => {
-            quotes.forEach(quote => quote.classList.remove('active'));
-            quotes[index].classList.add('active');
+            // Hide all quotes
+            quotes.forEach(quote => {
+                quote.classList.remove('active');
+                quote.style.opacity = '0'; // Ensure opacity is set to 0
+                quote.style.position = 'absolute';
+            });
+
+            // Show the active quote
+            const activeQuote = quotes[index];
+            activeQuote.classList.add('active');
+            activeQuote.style.opacity = '1';
+            activeQuote.style.position = 'relative';
         };
+
+        // Initialize the first quote correctly
+        showQuote(currentQuoteIndex);
 
         const nextQuote = () => {
             currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
