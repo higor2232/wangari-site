@@ -675,6 +675,17 @@ body {
     width: calc(100% - 60px); /* Garante que o texto não sobreponha o ícone */
 }
 
+.quote-item p {
+    margin-bottom: 10px;
+}
+
+.quote-item cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    font-style: normal;
+}
+
 .quote-item.active {
     opacity: 1;
     position: relative; /* Traz a citação ativa para o fluxo normal */
