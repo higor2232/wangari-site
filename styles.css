@@ -944,6 +944,244 @@ body {
     font-weight: 500;
 }
 
+/* Interview Modal Styles */
+.interview-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s;
+}
+
+.interview-modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.interview-header {
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+    color: white;
+    padding: 30px;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+
+.close-interview {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.close-interview:hover {
+    opacity: 0.7;
+}
+
+.interviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.interviewer-avatar {
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+}
+
+.interviewer-details h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.8em;
+}
+
+.interviewer-details p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.interview-date {
+    font-size: 0.9em;
+}
+
+.interview-content {
+    padding: 30px;
+}
+
+.interview-intro {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary-green);
+}
+
+.interview-intro p {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+}
+
+.qa-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.question-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.question {
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.question i {
+    font-size: 1.5em;
+    opacity: 0.8;
+}
+
+.question h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.answer {
+    padding: 25px;
+}
+
+.answer-content p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.answer-content p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-quote {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border-left: 4px solid var(--accent-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-style: italic;
+    color: var(--dark-green);
+    position: relative;
+}
+
+.highlight-quote::before {
+    content: '"';
+    font-size: 3em;
+    color: var(--accent-color);
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    opacity: 0.3;
+}
+
+.interview-footer {
+    background: var(--bg-light);
+    padding: 20px 30px;
+    border-radius: 0 0 15px 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.footer-note i {
+    color: var(--primary-green);
+}
+
+.footer-note p {
+    margin: 0;
+}
+
+/* Responsive adjustments for interview modal */
+@media (max-width: 768px) {
+    .interview-modal-content {
+        width: 95%;
+        margin: 5% auto;
+        max-height: 85vh;
+    }
+    
+    .interview-header {
+        padding: 20px;
+    }
+    
+    .interviewer-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .interviewer-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 2em;
+    }
+    
+    .interviewer-details h2 {
+        font-size: 1.5em;
+    }
+    
+    .interview-content {
+        padding: 20px;
+    }
+    
+    .question {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .answer {
+        padding: 20px;
+    }
+    
+    .highlight-quote {
+        padding: 15px;
+        margin: 15px 0;
+    }
+}
+
 /* Responsive adjustments for credits page */
 @media (max-width: 768px) {
     .credits-grid {

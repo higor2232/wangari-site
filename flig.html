@@ -41,6 +41,12 @@
                 Wangari Maathai e o Movimento Cinturão Verde.
             </p>
             
+            <div style="text-align: center; margin: 30px 0;">
+                <button id="openInterviewBtn" class="cta-button" style="display: inline-block; background: var(--accent-color); color: white; border: none; cursor: pointer;">
+                    <i class="fas fa-microphone"></i> Entrevista com a Coordenadora
+                </button>
+            </div>
+            
             <div class="stats-grid" style="margin-top: 30px;">
                 <div class="stat-card">
                     <div class="stat-icon">
@@ -204,8 +210,8 @@
             <h2><i class="fas fa-comments"></i> Depoimentos</h2>
             
             <blockquote class="hero-quote" style="margin-bottom: 20px;">
-                <p>"A FLIG nos mostrou que pequenas ações podem gerar grandes mudanças. Plantar uma árvore hoje é garantir um futuro melhor para todos."</p>
-                <cite>- Ana Silva, Estudante do 9º ano</cite>
+                <p>"É importante valorizar a cultura junto com a ideia de sustentabilidade e reforçar a necessidade de conscientização da sociedade."</p>
+                <cite>- Juvenal Dias, Diretor do Colégio Gauss</cite>
             </blockquote>
             
             <blockquote class="hero-quote" style="margin-bottom: 20px;">
@@ -214,8 +220,8 @@
             </blockquote>
             
             <blockquote class="hero-quote">
-                <p>"O projeto sobre Wangari Maathai inspirou toda nossa comunidade escolar a pensar globalmente e agir localmente."</p>
-                <cite>- Michelle Brasil, Diretora do Colégio Gauss</cite>
+                <p>"A FLIG é um projeto desafiador e ao mesmo tempo encantador."</p>
+                <cite>- Jade Pires, Coordenadora do Ensino Médio do Colégio Gauss</cite>
             </blockquote>
         </section>
 
@@ -226,6 +232,113 @@
                 <i class="fas fa-folder-open"></i> Ver Todos os Projetos
             </a>
         </section>
+    </div>
+
+    <!-- Modal da Entrevista -->
+    <div id="interviewModal" class="interview-modal">
+        <div class="interview-modal-content">
+            <div class="interview-header">
+                <span class="close-interview">&times;</span>
+                <div class="interviewer-info">
+                    <div class="interviewer-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="interviewer-details">
+                        <h2>Entrevista com Jade Pires</h2>
+                        <p>Coordenadora do Colégio Gauss</p>
+                        <p class="interview-date"><i class="fas fa-calendar"></i> Setembro 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interview-content">
+                <div class="interview-intro">
+                    <p>Conversamos com a coordenadora Jade Pires sobre a origem, propósitos e importância da FLIG para a comunidade escolar do Colégio Gauss.</p>
+                </div>
+
+                <div class="qa-section">
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Como surgiu a FLIG?</h3>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-content">
+                                <p>A FLIG surgiu a partir da ideia da Michelle (Diretora Michelle Brasil), a quatro anos atrás, de fazer um sarau literário no ensino fundamental, nas áreas de linguagens e humanas. A primeira edição foi algo simples, entre alunos, mas o resultado foi tão bom que decidimos expandir.</p>
+                                <p>Relacionar as obras literárias com o contexto histórico e trazer uma criticidade maior, própria das disciplinas de sociologia e filosofia, gerou uma integração de disciplinas no primeiro sarau.</p>
+                                <p>E a partir desse sarau, que teve um resultado tão bom, nós pensamos: por que não relacionar as demais matérias?</p>
+                                <p><strong>Então resolvemos que ao invés de fazer só relacionando linguagens e humanas, iríamos ampliar esse universo!</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Com que intuito/propósito foi criada a FLIG?</h3>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-content">
+                                <p>É uma feira que exala a criatividade dos nossos alunos, é um momento de expor e colocá-los como protagonistas desse processo de criação, tudo isso alinhado com o que a BNCC propõe.</p>
+                                <p>Então na FLIG, os alunos são pensados e idealizados pelos alunos, os professores apenas vão mediar aquele momento. Você percebe que o aluno coloca de fato a mão na massa e exercita sua criatividade, além de abordar diversas questões.</p>
+                                <blockquote class="highlight-quote">
+                                    "Nós conseguimos trabalhar de forma integral, por exemplo, nós temos as divisões em disciplinas, que cada uma tem seu conteúdo e cada conteúdo é trabalhado em seu devido horário, e no caso da FLIG, quando paramos para pensar nisso, percebe-se uma intertextualidade em que linguagens dialoga com matemática que dialoga com naturezas, e acontece todo esse processo."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Por que a escola escolheu abordar o tema sustentabilidade/ecologia esse ano?</h3>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-content">
+                                <p>Esse ano, no mês de novembro, irá ocorrer a COP30, em Belém, sobre as questões ambientais. E então nós decidimos que, nesse momento em que o mundo todo estaria voltado para nosso país pensando nessas questões, por que não trazer essa temática tão importante?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>A escola pretende continuar com essa abordagem sustentável? De que forma?</h3>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-content">
+                                <p>Na verdade, nós já temos algumas ações que visam isso. Então, por exemplo, todo material da escola, ao final do ano, é coletado por uma equipe de reciclagem que tem parceria conosco.</p>
+                                <p>Nós também já havíamos adotado a campanha de diminuição dos copos descartáveis, já que no início do ano os alunos recebem garrafas próprias.</p>
+                                <p>Aqui na nossa cidade, infelizmente, não tem coleta seletiva, o que dificulta muito essa abordagem ecológica, mas é algo que a escola deve sim pensar sobre.</p>
+                                <blockquote class="highlight-quote">
+                                    "O Gauss tem de adotar na prática, não só nesse momento da FLIG, ações que possam colaborar com o meio ambiente, já que nós, como uma instituição que tem visibilidade e que preza pela conscientização ecológica, deve reforçar isso."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <div class="question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Qual a importância da FLIG?</h3>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-content">
+                                <p><strong>A valorização da cultura, do conhecimento e do protagonismo do aluno.</strong></p>
+                                <p>Aqui em barreiras nós somos muito carentes de eventos culturais, e a FLIG cumpre parte dessa função, de envolver o aspecto cultural com o pedagógico, além de valorizar o talento do aluno.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interview-footer">
+                    <div class="footer-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Esta entrevista foi realizada em setembro de 2025 como parte do projeto educativo sobre Wangari Maathai e sustentabilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

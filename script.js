@@ -21,6 +21,23 @@ function toggleSidebar() {
     }
 }
 
+// Interview Modal Functions
+function openInterviewModal() {
+    const modal = document.getElementById('interviewModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeInterviewModal() {
+    const modal = document.getElementById('interviewModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
 // Animated Counter for Statistics
 function animateCounter() {
     const counters = document.querySelectorAll('.stat-number');
@@ -242,3 +259,35 @@ function handleSwipe() {
         sidebar.classList.remove('open');
     }
 }
+
+// Interview Modal Event Listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Open interview modal button
+    const openInterviewBtn = document.getElementById('openInterviewBtn');
+    if (openInterviewBtn) {
+        openInterviewBtn.addEventListener('click', openInterviewModal);
+    }
+
+    // Close interview modal button
+    const closeInterviewBtn = document.querySelector('.close-interview');
+    if (closeInterviewBtn) {
+        closeInterviewBtn.addEventListener('click', closeInterviewModal);
+    }
+
+    // Close modal when clicking outside
+    const interviewModal = document.getElementById('interviewModal');
+    if (interviewModal) {
+        interviewModal.addEventListener('click', function(event) {
+            if (event.target === interviewModal) {
+                closeInterviewModal();
+            }
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeInterviewModal();
+        }
+    });
+});
