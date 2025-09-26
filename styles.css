@@ -838,6 +838,17 @@ body {
     border-radius: 50%;
 }
 
+.student-photo-clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.student-photo-clickable:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
 .credit-card h3 {
     color: var(--primary-green);
     margin-bottom: 10px;

@@ -284,10 +284,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close modal with Escape key
+    // Close modals with Escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeInterviewModal();
+            const studentModal = document.getElementById('studentPhotoModal');
+            if (studentModal && studentModal.style.display === 'block') {
+                studentModal.style.display = 'none';
+            }
         }
     });
+
+    // Student Photo Modal Logic
+    const studentModal = document.getElementById('studentPhotoModal');
+    if (studentModal) {
+        const studentModalImg = document.getElementById('studentModalImage');
+        const studentCaptionText = document.getElementById('studentModalCaption');
+        const clickableStudentPhotos = document.querySelectorAll('.student-photo-clickable');
+
+        clickableStudentPhotos.forEach(img => {
+            img.onclick = function() {
+                studentModal.style.display = 'block';
+                studentModalImg.src = this.src;
+                
+                // Encontra os detalhes do card do aluno
+                const card = this.closest('.credit-card');
+                const name = card.querySelector('h3').innerText;
+                const description = card.querySelector('.credit-description').innerText;
+                studentCaptionText.innerHTML = `<h3>${name}</h3><p>${description}</p>`;
+            }
+        });
+
+        const closeStudentBtn = studentModal.querySelector('.close-button');
+        if (closeStudentBtn) {
+            closeStudentBtn.onclick = function() {
+                studentModal.style.display = 'none';
+            }
+        }
+
+        // Fecha o modal ao clicar fora da imagem
+        studentModal.onclick = function(event) {
+            if (event.target === studentModal) {
+                studentModal.style.display = 'none';
+            }
+        }
+    }
 });
