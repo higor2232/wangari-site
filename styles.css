@@ -738,6 +738,42 @@ body {
     transform: translateY(-50%);
 }
 
+/* Student Photo Modal Specific Styles */
+#studentPhotoModal .modal-content {
+    width: 60%;
+    max-width: 400px;
+}
+
+#studentPhotoModal .modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#studentPhotoModal .modal-caption {
+    margin: 20px auto;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+#studentPhotoModal .modal-caption h3 {
+    color: var(--light-green);
+    margin: 0 0 8px 0;
+    font-size: 1.3em;
+}
+
+#studentPhotoModal .modal-caption p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95em;
+}
+
 .modal-image {
     width: 100%;
     height: auto;
@@ -1250,5 +1286,30 @@ body {
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+    }
+    
+    /* Student Photo Modal Responsive */
+    #studentPhotoModal .modal-content {
+        width: 85%;
+        max-width: 300px;
+    }
+    
+    #studentPhotoModal .modal-image {
+        max-height: 300px;
+        border-radius: 10px;
+    }
+    
+    #studentPhotoModal .modal-caption {
+        max-width: 300px;
+        padding: 12px;
+        margin: 15px auto;
+    }
+    
+    #studentPhotoModal .modal-caption h3 {
+        font-size: 1.1em;
+    }
+    
+    #studentPhotoModal .modal-caption p {
+        font-size: 0.9em;
     }
 }
