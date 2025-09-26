@@ -791,3 +791,180 @@ body {
     max-width: 600px;
     border-radius: 10px;
 }
+
+/* Credits Page Styles */
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.credit-card {
+    background: white;
+    border: 2px solid var(--bg-light);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.credit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--light-green);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.15);
+}
+
+.credit-icon {
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2em;
+}
+
+.credit-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.credit-role {
+    color: var(--dark-green);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.credit-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+/* Professor Card Special Styling */
+.professor-card {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, #fff8e1, #ffffff);
+}
+
+.professor-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.15);
+}
+
+.professor-card .credit-icon {
+    background: linear-gradient(135deg, var(--accent-color), #ffb74d);
+}
+
+/* Special Thanks Section */
+.special-thanks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.thanks-item {
+    background: linear-gradient(135deg, var(--bg-light), #ffffff);
+    border-left: 4px solid var(--primary-green);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.thanks-item:hover {
+    transform: translateX(5px);
+}
+
+.thanks-item i {
+    color: var(--primary-green);
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.thanks-item h3 {
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.thanks-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Project Info Section */
+.project-info {
+    margin-top: 25px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    border-color: var(--light-green);
+    background: white;
+}
+
+.info-item i {
+    color: var(--primary-green);
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.info-item h4 {
+    color: var(--dark-green);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.info-item p {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for credits page */
+@media (max-width: 768px) {
+    .credits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .special-thanks {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .credit-card {
+        padding: 20px;
+    }
+    
+    .credit-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+    }
+}
